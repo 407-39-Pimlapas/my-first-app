@@ -1,4 +1,4 @@
-import streamlist as st
+import streamlit as st
 
 # 1. หัวข้อใหญ่: แนะนำตัวหลักและชื่อเจ้าของเว็๋บ
 st.title("My digital profile")
