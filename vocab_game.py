@@ -94,6 +94,7 @@ ans2 = st.text_input(
     "ข้อ 2: Cats love to eat `f _ s h`. 🐟",
     value=st.session_state.ans2_val,
 )
+
 ans3 = st.text_input(
     "ข้อ 3: Student use to write `p _ n _ i l`.✏️  ",
     value=st.session_state.ans3_val,
@@ -110,6 +111,7 @@ st.session_state.ans2_val = ans2
 # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
 st.session_state.ans3_val = ans3
 st.session_state.ans4_val = ans4
+
 # 4. ปุ่มส่งคำตอบ
 if "start" in st.session_state and not st.session_state.get("is_ended", False):
     if st.button("📥 ส่งคำตอบ"):
@@ -121,7 +123,8 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2, ans3, ans4)
+    show_result_dialog(ans1, ans2)
+    show_result_dialog(ans3, ans4)
 
 st.divider()
 st.write("นางสาวพิมพ์ลภัส สายวงค์เปี้ย เลขที่ 39 ม.4/7")
