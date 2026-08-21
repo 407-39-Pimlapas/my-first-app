@@ -58,10 +58,10 @@ def show_result_dialog(ans1, ans2):
 st.button("🎮 เริ่มเล่นเกม", on_click=reset_game)
 
 # 2. แถบแสดงเวลานับถอยหลัง
-    if "start" in st.session_state and not st.session_state.get("is_ended", False):
-       time_left = int(30 - (time.time() - st.session_state.start))
+if "start" in st.session_state and not st.session_state.get("is_ended", False):
+    time_left = int(30 - (time.time() - st.session_state.start))
 
-  if time_left > 0:
+    if time_left > 0:
         st.error(f"⏳ เหลือเวลา: {time_left} วินาที")
     else:
         st.session_state.is_ended = True
@@ -87,7 +87,7 @@ st.session_state.ans2_val = ans2
 
 
 # 4. ปุ่มส่งคำตอบ
-    if "start" in st.session_state and not st.session_state.get("is_ended", False):
+if "start" in st.session_state and not st.session_state.get("is_ended", False):
     if st.button("📥 ส่งคำตอบ"):
         st.session_state.is_ended = True
         st.rerun()
@@ -96,9 +96,8 @@ st.session_state.ans2_val = ans2
     st.rerun()
 
 # 5. แสดง Dialog ผลลัพธ์
-   if st.session_state.get("is_ended", False):
+if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2)
 
 st.divider()
 st.write("นางสาวดีใจ ยิ้มแย้ม เลขที่ 5 ม.4/5")
-
