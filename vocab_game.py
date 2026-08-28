@@ -62,7 +62,7 @@ def show_result_dialog(ans1, ans2):
 
 
     # คะแนนรวม
-    st.info(f"🏆 ได้คะแนนรวม: {score} / 4 คะแนน")
+    st.info(f"🏆 ได้คะแนนรวม: {score} / 2 คะแนน")
 
     if score == 2:
         st.success("🎉 You win!")
