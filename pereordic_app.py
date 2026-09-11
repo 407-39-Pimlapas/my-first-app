@@ -51,28 +51,25 @@ def show_result_dialog(ans1, ans2):
 
 
 # ข้อ 1
-if u_ans1 == "ลิเทียม":
+if u_ans1.strip() == "ลิเทียม":
     st.success("✅ ข้อ 1: ถูกต้อง")
     score += 1
 else:
     st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
 
 # ข้อ 2
-if u_ans2 == "โซเดียม":
+if u_ans2.strip() == "โซเดียม":
     st.success("✅ ข้อ 2: ถูกต้อง")
     score += 1
 else:
     st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
-# ข้อ 3 
-if u_ans3 == "แคลเซียม":
+# ข้อ 3
+if u_ans3.strip() == "แคลเซียม":
     st.success("✅ ข้อ 3: ถูกต้อง")
     score += 1
 else:
     st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
-
-# คะแนนรวม (ปรับคะแนนเต็มเป็น 3)
-st.info(f"🏆 ได้คะแนนรวม: {score} / 3 คะแนน")
 
 if score == 3:
     st.success("🎉 คุณชนะแล้ว!")
