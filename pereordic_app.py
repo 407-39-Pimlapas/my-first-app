@@ -50,27 +50,26 @@ def show_result_dialog(ans1, ans2):
     u_ans3 = ans3.strip().lower()
 
 
-    # ข้อ 1
-    if u_ans1 == "ลิเทียม":
-        st.success("✅ ข้อ 1: ถูกต้อง")
-        score += 1
-    else:
-        st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
+  # ข้อ 1
+if u_ans1 == "ลิเทียม":
+    st.success("✅ ข้อ 1: ถูกต้อง")
+    score += 1
+ else:
+    st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
 
-    # ข้อ 2
-    if u_ans3 == "โซเดียม":
+# ข้อ 2
+ if u_ans2 == "โซเดียม":  # แก้จาก u_ans3 เป็น u_ans2
     st.success("✅ ข้อ 2: ถูกต้อง")
     score += 1
-else:
+  else:
     st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
-   
-    # ข้อ 3 
-   if u_ans3 == "แคลเซียม":
+
+# ข้อ 3 
+  if u_ans3 == "แคลเซียม":
     st.success("✅ ข้อ 3: ถูกต้อง")
     score += 1
-else:
+   else:
     st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
-
 
 
 # คะแนนรวม
@@ -78,7 +77,7 @@ else:
 
     if score == 10:
         st.success("🎉คุณชนะแล้ว!")
-     elif score >= 1 and score <=9:
+     elif score >= 5 and score <10:
         st.info("ไปจำมาอีกนิดนะขนาดจำเรื่องของคนเก่ายังจำได้เลย")
      else:
         st.error("คุณแพ้แล้วลองเริ่มต้นใหม่ดูนะถึงแม้จะเริ่มต้นใหม่กับคนเก่าไม่ได้ก็ตาม")
