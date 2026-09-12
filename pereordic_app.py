@@ -129,28 +129,32 @@ ans3 = st.text_input(
 
 
 # ----------------------------------------------------
-# 7. บันทึกคำตอบ
+# 7. เก็บคำตอบลง session_state
 # ----------------------------------------------------
 st.session_state.ans1_val = ans1
 st.session_state.ans2_val = ans2
 st.session_state.ans3_val = ans3
 
+
 # ----------------------------------------------------
-# 8. ปุ่มส่งคำตอบ
+# 8. ปุ่มส่งคำตอบ + Timer
 # ----------------------------------------------------
 if (
     st.session_state.start is not None
     and not st.session_state.is_ended
 ):
 
-    if st.button("📥 ส่งคำตอบ"):
+    if st.button("📥 ส่งคำตอบ", key="submit_answer"):
 
         st.session_state.is_ended = True
         st.rerun()
 
     # ทำให้เวลานับทุก 1 วินาที
     time.sleep(1)
-    st.rerun()
+
+    # ตรวจสอบอีกครั้งก่อน rerun
+    if not st.session_state.is_ended:
+        st.rerun()
 
 
 # ----------------------------------------------------
@@ -159,14 +163,13 @@ if (
 if st.session_state.is_ended:
 
     show_result_dialog(
-        st.session_state.ans1_val,
-        st.session_state.ans2_val,
-        st.session_state.ans3_val,
+        st.session_state.get("ans1_val", ""),
+        st.session_state.get("ans2_val", ""),
+        st.session_state.get("ans3_val", ""),
     )
 
 
 st.divider()
-
 st.write(
     "นางสาวพิมพ์ลภัส สายวงค์เปี้ย เลขที่ 39 ม.4/7"
 )
