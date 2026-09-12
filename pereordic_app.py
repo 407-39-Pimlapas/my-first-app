@@ -236,7 +236,7 @@ if (
 ):
 
     elapsed_time = time.time() - st.session_state.start
-    time_left = max(0, int(30 - elapsed_time))
+    time_left = max(0, int(60 - elapsed_time))
 
     if time_left > 0:
         st.error(f"⏳ เหลือเวลา: {time_left} วินาที")
@@ -406,7 +406,7 @@ if st.session_state.is_ended:
 
 st.divider()
 
-st.caption("⏱️ มีเวลา 30 วินาทีในการตอบคำถามทั้งหมด 10 ข้อ")
+st.caption("⏱️ มีเวลา 1 นาทีในการตอบคำถามทั้งหมด 10 ข้อ")
 
 st.write(
     "นางสาวพิมพ์ลภัส สายวงค์เปี้ย เลขที่ 39 ม.4/7"
