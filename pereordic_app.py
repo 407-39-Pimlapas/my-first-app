@@ -70,13 +70,14 @@ def show_result_dialog(ans1, ans2):
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
+score = 3
+
 if score == 3:
-    st.success("🎉ว้าววว คุณเก่งมาก")
-elif score >= 1 and score <= 2:  
-    st.info("🎈คุณพยายามอีกนิดนะ")
+    st.success("🎉 ว้าววว คุณเก่งมาก")
+elif 1 <= score <= 2:
+    st.info("🎈 คุณพยายามอีกนิดนะ")
 else:
     st.error("💀 You lose!")
-
 
 # ----------------------------------------------------
 # 4. ปุ่มเริ่มเกม
